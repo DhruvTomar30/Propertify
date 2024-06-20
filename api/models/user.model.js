@@ -1,25 +1,25 @@
 import mongoose from "mongoose";
 import { type } from "os";
-const userSchema=new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     username: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+      required: true,
+      unique: true
     },
     email: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+      required: true,
+      unique: true
     },
     password: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
-    avatar:{
-        type:String,
-        default:"https://imgs.search.brave.com/bIkpHw6cWZRHzdOnYK7TnI67_uqVzpREf0V0pQWu_pw/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2RkL2Yw/LzExL2RkZjAxMTBh/YTE5ZjQ0NTY4N2I3/Mzc2NzllZWM5Y2Iy/LmpwZw"
+    avatar: {
+      type: String, // Ensure avatar field is defined in the schema
+      default: "https://imgs.search.brave.com/pTopBbUFdYAukv2XiZZOGHPGZN-03eJBBMyU1u9QCD0/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5naXRlbS5jb20v/cGltZ3MvbS8zMC0z/MDc0MTZfcHJvZmls/ZS1pY29uLXBuZy1p/bWFnZS1mcmVlLWRv/d25sb2FkLXNlYXJj/aHBuZy1lbXBsb3ll/ZS5wbmc"
     }, 
-}, {timestamps: true});
+  }, { timestamps: true });
 
 const User =mongoose.model("User",userSchema);
 
